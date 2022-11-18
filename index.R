@@ -65,10 +65,12 @@ politely_get_prism_dailys =function(template_row){
 
 
 ## 1.4 Iterate over all combinations of type and dates ---------------------
-#' Note we may
+#' Note we may need to repeat some of the timed out pull id's... see next section
 status_first_pass = template  %>%  
   sample_n(20) %>% 
   group_by(grouper) %>% 
   group_modify(~politely_get_prism_dailys(.x))
 
 
+# 1.5 Rerun failed jobs until all done ------------------------------------
+#' write logic to cehck for failed runs and then repeat until completion.
