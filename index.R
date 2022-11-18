@@ -25,7 +25,7 @@ dates_split  = split(all_dates, ceiling(seq_along(all_dates)/3))
 
 # 1.2 Create pull combinations --------------------------------------------
 template = tibble(type = list( c( "ppt", "tmean", "tmin", "tmax", "tdmean", "vpdmin",  "vpdmax")),
-                  dates = dates_split_5) %>% 
+                  dates = dates_split) %>% 
   rowwise() %>% 
   mutate(minDate = dates[[1]],
          maxDate = dates[[length(dates)]]) %>% 
@@ -73,4 +73,4 @@ status_first_pass = template  %>%
 
 
 # 1.5 Rerun failed jobs until all done ------------------------------------
-#' write logic to cehck for failed runs and then repeat until completion.
+#' write logic to check for failed runs and then repeat until completion.
