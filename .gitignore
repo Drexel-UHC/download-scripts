@@ -49,3 +49,12 @@ po/*~
 rsconnect/
 
 /download/
+*.bil
+*.xml
+*.hdr
+*.txt
+*.prj
+*.stx
+prism/download/PRISM_tdmean_stable_4kmD2_20080215_bil/PRISM_tdmean_stable_4kmD2_20080215_bil.stn.csv
+prism/download/PRISM_tdmean_stable_4kmD2_20080214_bil/PRISM_tdmean_stable_4kmD2_20080214_bil.stn.csv
+prism/download/PRISM_tdmean_stable_4kmD2_20080213_bil/PRISM_tdmean_stable_4kmD2_20080213_bil.stn.csv
