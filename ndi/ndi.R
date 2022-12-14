@@ -93,7 +93,7 @@ politely_get_ndi_basic = function(template_row){
 pull_ndi_metric = function(metric){
   template  %>% 
     filter(metric == metric) %>% 
-    # sample_n(2) %>%
+    sample_n(3) %>%
     group_by(row) %>% 
     group_modify(~politely_get_ndi_basic(.x)) %>% 
     ungroup()
@@ -106,10 +106,11 @@ results = metrics %>%
 
 # 1.4 Write datasets ------------------------------------
 
-map2(results, metrics,
+map2(results, names(results),
      function(result, metric){
        file_name = paste0("download/",metric,".csv")
        result %>% write_csv(file_name)
      })
 
+results %>% map(~names(.x))
 
